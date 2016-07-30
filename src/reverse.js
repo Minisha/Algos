@@ -51,6 +51,39 @@ function  reverse5 (string) {
 }
 
 
+function reverse6 (string) {
+    var length = string.length;
+    var result = '';
+    while (length > 0) {
+        result += string.substring(length-1, length);
+        length --;
+    }
+    return result;
+}
 
-var r = reverse5('hi there');
+
+function  reverse7 (string) {
+    for(var i = string.length- 1, result = ''; i >= 0; result += string [i--]) {}
+    return result;
+}
+
+function reverse8 (string) {
+    return (string === '') ? '' : reverse8(string.substr(1)) + string.charAt(0);
+}
+
+
+//TODO
+function reverse9 (string) {
+    var len = string.length;
+    for (var i = 0; i < len / 2; ++i) {
+        var temp = string[i];
+        string[i] = string[len - i];
+        string[len - i] = temp;
+    }
+    return string;
+}
+
+
+
+var r = reverse9('hi there');
 console.log(r);
